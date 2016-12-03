@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/sounds">
+        <file>Magier kampf.mp3</file>
+    </qresource>
+    <qresource prefix="/pictures">
+        <file>Ufo.png</file>
+        <file>Landschaft.png</file>
+        <file>Jet.png</file>
+        <file>Schuss.png</file>
+    </qresource>
+</RCC>
