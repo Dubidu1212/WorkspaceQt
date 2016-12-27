@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/xml">
+        <file>example.tmx</file>
+        <file>test.xml</file>
+    </qresource>
+</RCC>
