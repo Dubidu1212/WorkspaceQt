@@ -16,9 +16,12 @@ SOURCES += main.cpp \
     handler.cpp
 
 HEADERS  += \
-    handler.h
+    handler.h \
+    structs.h
 
 FORMS    +=
 
 RESOURCES += \
     res.qrc
+
+DISTFILES +=

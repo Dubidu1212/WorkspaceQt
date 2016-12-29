@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/xml">
         <file>example.tmx</file>
+        <file>examplddde.tmx</file>
+        <file>esssaple.tmx</file>
     </qresource>
 </RCC>

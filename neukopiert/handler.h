@@ -3,7 +3,7 @@
 
 #include <qstring.h>
 #include <qxml.h>
-
+#include "structs.h"
 class Handler : public QXmlDefaultHandler
 {
 public:

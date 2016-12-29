@@ -3,20 +3,7 @@
 #include "handler.h"
 
 #include <iostream>
-struct tileset{
-    int firstgid;
-    QString name;
-    int tilewidth;
-    int tileheight;
-    int tilecount;
-    int columns;
 
-};
-
-struct map{
-
-
-};
 int main(int argc, char **argv)
 {
 

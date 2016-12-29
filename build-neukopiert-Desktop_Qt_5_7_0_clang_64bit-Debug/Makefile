@@ -208,7 +208,8 @@ DIST          = ../../5.7/clang_64/mkspecs/features/spec_pre.prf \
 		../../5.7/clang_64/mkspecs/features/exceptions.prf \
 		../../5.7/clang_64/mkspecs/features/yacc.prf \
 		../../5.7/clang_64/mkspecs/features/lex.prf \
-		../neukopiert/neukopiert.pro ../neukopiert/handler.h ../neukopiert/main.cpp \
+		../neukopiert/neukopiert.pro ../neukopiert/handler.h \
+		../neukopiert/structs.h ../neukopiert/main.cpp \
 		../neukopiert/handler.cpp
 QMAKE_TARGET  = neukopiert
 DESTDIR       = 
@@ -575,7 +576,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../neukopiert/res.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../neukopiert/handler.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../neukopiert/handler.h ../neukopiert/structs.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../neukopiert/main.cpp ../neukopiert/handler.cpp $(DISTDIR)/
 
 
@@ -605,6 +606,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_res.cpp
 qrc_res.cpp: ../neukopiert/res.qrc \
 		../../5.7/clang_64/bin/rcc \
+		../neukopiert/examplddde.tmx \
 		../neukopiert/example.tmx
 	/Users/alexanderzumbrunn/Qt/5.7/clang_64/bin/rcc -name res ../neukopiert/res.qrc -o qrc_res.cpp
 
@@ -629,14 +631,18 @@ compiler_clean: compiler_rcc_clean
 main.o: ../neukopiert/main.cpp ../../5.7/clang_64/lib/QtCore.framework/Headers/qfile.h \
 		../../5.7/clang_64/lib/QtXml.framework/Headers/qxml.h \
 		../neukopiert/handler.h \
-		../../5.7/clang_64/lib/QtCore.framework/Headers/qstring.h
+		../../5.7/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../neukopiert/structs.h \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../neukopiert/main.cpp
 
 handler.o: ../neukopiert/handler.cpp ../../5.7/clang_64/lib/QtCore.framework/Headers/QDebug \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qdebug.h \
 		../neukopiert/handler.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qstring.h \
-		../../5.7/clang_64/lib/QtXml.framework/Headers/qxml.h
+		../../5.7/clang_64/lib/QtXml.framework/Headers/qxml.h \
+		../neukopiert/structs.h \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o handler.o ../neukopiert/handler.cpp
 
 qrc_res.o: qrc_res.cpp 
