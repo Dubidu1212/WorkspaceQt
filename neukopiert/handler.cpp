@@ -13,6 +13,7 @@ bool Handler::startDocument()
     elementName.clear();
     elementAttributes.clear();
     elementIndentation.clear();
+    elementAnzahl.clear();
     indentationLevel = 0;
 
     return true;
@@ -34,12 +35,14 @@ bool Handler::startElement(const QString &, const QString &,
 {
 
     elementName.append(qName);
-
+    int anzahl = 0;
     for(int index = 0; index < atts.length();index++){
 
         elementAttributes.append(atts.value(index));
+        anzahl = index+1;
     }
 
+    elementAnzahl.append(anzahl);
 
     elementIndentation.append(indentationLevel);
     indentationLevel += 1;
@@ -97,4 +100,7 @@ QList<int>& Handler::indentations ()
 QStringList& Handler::attributes ()
 {
     return elementAttributes;
+}
+QList<int>& Handler::anzahl (){
+    return elementAnzahl;
 }

@@ -3,13 +3,23 @@
 #include "handler.h"
 
 #include <iostream>
+struct tileset{
+    int firstgid;
+    QString name;
+    int tilewidth;
+    int tileheight;
+    int tilecount;
+    int columns;
 
+};
+
+struct map{
+
+
+};
 int main(int argc, char **argv)
 {
-    /*if (argc != 2) {
-        std::cout << "Usage: " << argv[0] << " <filename>" << std::endl;
-        return 1;
-    }*/
+
 
     QFile *file = new QFile(":/xml/example.tmx");
 
@@ -34,14 +44,24 @@ int main(int argc, char **argv)
         QStringList names = handler->names();
         QStringList attributes = handler->attributes();
         QList<int> indentations = handler->indentations();
-
+        QList<int> anzahl = handler->anzahl();
         int items = names.count();
 
+        int durchgang = 0;
+
         for (int i = 0; i < items; ++i) {
-            for (int j = 0; j < indentations[i]; ++j)
+            for (int j = 0; j < indentations[i]; ++j){
                 std::cout << " ";
-            std::cout << names[i].toLocal8Bit().constData() << " " << attributes[i].toLocal8Bit().constData() << std::endl;
+            }
+            std::cout << names[i].toLocal8Bit().constData() << " " ;
             //weitere attribute printen(so viele wie vorhanden
+
+            for(int y = 0; y < anzahl[i] ; y++){
+                std::cout << attributes[durchgang].toLocal8Bit().constData() << "   ";
+                durchgang++;
+            }
+            std::cout << std::endl;
+
         }
     }
 

@@ -15,12 +15,14 @@ public:
     bool fatalError(const QXmlParseException &exception);
     QStringList& attributes();
     QStringList& names();
+    QList<int>& anzahl();
     QList<int>& indentations();
 
 private:
     int indentationLevel;
     QStringList elementName;
     QStringList elementAttributes;
+    QList<int> elementAnzahl;
     QList<int> elementIndentation;
 };
 
