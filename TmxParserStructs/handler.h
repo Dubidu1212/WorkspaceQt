@@ -1,8 +1,14 @@
 #ifndef HANDLER_H
 #define HANDLER_H
 
-#include <qstring.h>
+
 #include <qxml.h>
+#include "structs.h"
+#include "imageloader.h"
+#include <qfile.h>
+#include <QDebug>
+#include <iostream>
+
 
 class Handler : public QXmlDefaultHandler
 {

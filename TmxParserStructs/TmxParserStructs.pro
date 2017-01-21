@@ -13,11 +13,13 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    handler.cpp
+    handler.cpp \
+    imageloader.cpp
 
 HEADERS  += \
     handler.h \
-    structs.h
+    structs.h \
+    imageloader.h
 
 
 FORMS    +=

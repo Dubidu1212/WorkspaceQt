@@ -1,6 +1,5 @@
-#include <QDebug>
 #include "handler.h"
-#include "structs.h"
+
 /*!
     Reset the state of the handler to ensure that new documents are
     read correctly.
@@ -43,11 +42,11 @@ bool Handler::startElement(const QString &, const QString &,
         int d = index;
         if(qName == "map"){//alle attribute von map
             if(atts.qName(index) == "width"){
-                map.width = atts.value(index).toInt();
+                mp.width = atts.value(index).toInt();
                 index ++;
             }
             if(atts.qName(index)== "height"){
-                map.height = atts.value(index).toInt();
+                mp.height = atts.value(index).toInt();
                 index++;
             }
         }
@@ -85,8 +84,8 @@ bool Handler::startElement(const QString &, const QString &,
         }
         if(qName == "image"){//!muss noch ein try catch block einbauen fals ein image nicht hinter einem tileset ist
             if(atts.qName(index) == "source"){
-                t.source = atts.qName(index);
-                map.tilesets.append(t);
+                t.source = atts.value(index);
+                mp.tilesets.append(t);
             }
         }
         if(qName =="layer"){
@@ -113,7 +112,7 @@ bool Handler::startElement(const QString &, const QString &,
                 }
 
             }
-            map.layers.append(l);
+            mp.layers.append(l);
         }
 
 

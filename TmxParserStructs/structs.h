@@ -23,7 +23,8 @@ struct teraintypes{//ansamlung aller terains
 struct tile{//eine einzelne kachel auf einer bestimmten ebenen
     int gid;
     terain tileTerain;
-}ti;
+};
+extern tile ti;
 
 
 struct tileset{//speicher der
@@ -35,8 +36,8 @@ struct tileset{//speicher der
     int tilecount;
     int columns;
 
-}t;
-
+};
+extern tileset t;
 
 struct layer{//schicht der map
     QString name;
@@ -44,7 +45,9 @@ struct layer{//schicht der map
     int height;
     QList<tile> tiles;
 
-}l;
+};
+extern layer l;
+
 struct property{
     QString name;
     QString type;//!function templates(sololearn)
@@ -70,8 +73,8 @@ struct map{
     QList<objectgroup> objectgroups;
     int width;
     int height;
-}map;
-
+};
+extern map mp;
 
 
 

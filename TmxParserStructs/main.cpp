@@ -1,21 +1,16 @@
-#include <qfile.h>
-#include <qxml.h>
 #include "handler.h"
+#include <QtGui>
 
-#include <iostream>
+layer l;
+map mp;
+tileset t;
+tile ti;
 
-/*int allesBisHier(int z, QList <int> *anzahl){
-    int alles=0;
-    QList <int> LTemp = *anzahl;
-    for(int y= 0;y<z;y++){
-
-        alles += LTemp[y];
-    }
-    return alles;
-}
-*/
 int main(int argc, char **argv)
 {
+
+
+
 
 
     QFile *file = new QFile(":/xml/example.tmx");
@@ -61,27 +56,20 @@ int main(int argc, char **argv)
             std::cout << std::endl;
 
         }
-        //structs definieren
-        /*
-        durchgang = 0;
-        for (int i = 0; i < items; ++i){
-            if (names[i] == "map"){
-               for(int x = 0 ;x < anzahl[i]; x++){
-                   QList<int> *PtrAnzahl = &anzahl;
-                    std::cout << "Beendet"<<std::endl;
-                   if(attributeName[((allesBisHier(i,PtrAnzahl) - anzahl[i]) + x)] == "width"){///fehler hier
 
-                       QString temp = attributeName[((allesBisHier(i,PtrAnzahl) - anzahl[i]) + x)];
-                       map.width = temp.toInt();
-                   }
+        imageloader il;
+        QStringList sources;
+        for(int x = 0; x < mp.tilesets.length();x++){
+            sources.append(mp.tilesets[x].source);
+        }
+        QList <QImage> images;
+       images = il.Loadtilesets(mp.tilesets.length(),sources);
 
-
-               }
-            }
-        }*/
-
-
-
+       //Nur zum Testen       von
+       for(int x = 0; x < sources.length();x++){
+           qDebug() <<  QString("qrc:/") + sources.at(x);
+       }
+       //bis
 
 
 
