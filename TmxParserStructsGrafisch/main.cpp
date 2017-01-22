@@ -64,6 +64,8 @@ int main(int argc, char **argv)
        pixmapItem->setPixmap(pixmap->fromImage(images.at(0)));
 
        scene->addItem(pixmapItem);
+       scene->setSceneRect(0,0,1000,600);//grösse scene
+
        view->setScene(scene);
        view->show();
 
