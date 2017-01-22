@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/tileset">
+        <file>grass-tiles-2-small.png</file>
+        <file>GrasZuStein.png</file>
+        <file>qubodup-bush_0.png</file>
+        <file>qubodup-bush_berries_0.png</file>
+        <file>tree2-final.png</file>
+    </qresource>
+</RCC>
