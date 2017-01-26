@@ -28,7 +28,7 @@ extern tile ti;
 
 
 struct tileset{//speicher der
-    int firstgid;
+    int firstgid;//!wird nicht eingelesen
     QString source;
     QString name;
     int tilewidth;

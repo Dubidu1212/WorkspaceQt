@@ -50,9 +50,12 @@ bool Handler::startElement(const QString &, const QString &,
                 index++;
             }
         }
+       // std::cout << qName.toStdString() << "    " << atts.qName(index).toStdString() << std::endl;
 
+        //TODO tileset und alle anderen mehr atributigen speicher loops überarbeiten
         if(qName == "tileset"){
-        tileset t;
+
+            tileset t;
 
             if(atts.qName(index)=="firstgid"){
                 t.firstgid = atts.value(index).toInt();
@@ -83,6 +86,7 @@ bool Handler::startElement(const QString &, const QString &,
 
         }
         if(qName == "image"){//!muss noch ein try catch block einbauen fals ein image nicht hinter einem tileset ist
+
             if(atts.qName(index) == "source"){
                 t.source = atts.value(index);
                 mp.tilesets.append(t);
