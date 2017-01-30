@@ -24,7 +24,7 @@ struct tile{//eine einzelne kachel auf einer bestimmten ebenen
     int gid;
     terain tileTerain;
 };
-extern tile ti;
+
 
 
 struct tileset{//speicher der
@@ -46,7 +46,7 @@ struct layer{//schicht der map
     QList<tile> tiles;
 
 };
-extern layer l;
+
 
 struct property{
     QString name;

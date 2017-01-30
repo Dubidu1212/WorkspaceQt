@@ -7,15 +7,15 @@
 #include <vector>
 
 
-layer l;
+
 map mp;
 tileset t;
-tile ti;
+
 
 int main(int argc, char **argv)
 {
 
-
+    //Problem ist beim einlesen
     int höhe = 500; //!blidschirmgrösse
     QApplication app(argc,argv);
     QGraphicsScene * scene = new QGraphicsScene();
@@ -77,12 +77,11 @@ int main(int argc, char **argv)
 
            int varY = 0;
            int tileheight = mp.tilesets.at(x).tileheight;
-           std::cout << mp.tilesets.at(0).tilecount;
-           //std::cout << mp.layers.at(0).tiles.at(0).gid << std::endl;
-            //std::cout << mp.tilesets.at(x).name;
-          // std::cout << mp.tilesets.at(x).tilecount /  mp.tilesets.at(x).columns;//fehler weil nicht richtig eingelesen
-/*
-           for(int z = 0; z< mp.tilesets.at(x).tilecount / mp.tilesets.at(x).columns; z++){
+
+
+           int rows = mp.tilesets.at(x).tilecount /  mp.tilesets.at(x).columns;//fehler weil nicht richtig eingelesen
+
+           for(int z = 0; z< rows; z++){
 
                int varX = 0;
                for(int y = 0; y < mp.tilesets.at(x).columns;y++){
@@ -93,7 +92,7 @@ int main(int argc, char **argv)
                varY += tileheight;
            }
 
-*/
+
 
 
        }
@@ -107,8 +106,9 @@ int main(int argc, char **argv)
 
 
        QPixmap * pixmap = new QPixmap();
-       pixmapItem->setPixmap(pixmap->fromImage(images.at(0)));
+      // pixmapItem->setPixmap(pixmap->fromImage(images.at(0)));
 
+       pixmapItem->setPixmap(pixmap->fromImage(gid.at(0)));
        scene->addItem(pixmapItem);
 
        //view->setSceneRect(0,0,höhe*16/9,höhe);

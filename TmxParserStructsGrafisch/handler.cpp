@@ -6,7 +6,7 @@
 
     We return true to indicate that parsing should continue.
 */
-
+//index ++ funktioniert wahrscheinlich nicht, da die daten an der index position noch nicht geparst wurden
 bool Handler::startDocument()
 {
     elementName.clear();
@@ -40,7 +40,7 @@ bool Handler::startElement(const QString &, const QString &,
 
     for(int index = 0; index < atts.length();index++){
         int d = index;
-        if(qName == "map"){//alle attribute von map
+        if(qName == "map"){//alle attribute von map    Kein fehler
             if(atts.qName(index) == "width"){
                 mp.width = atts.value(index).toInt();
                 index ++;
@@ -50,42 +50,47 @@ bool Handler::startElement(const QString &, const QString &,
                 index++;
             }
         }
-       // std::cout << qName.toStdString() << "    " << atts.qName(index).toStdString() << std::endl;
+        //std::cout << qName.toStdString() << "    " << atts.qName(index).toStdString() << std::endl;
 
-        //TODO tileset und alle anderen mehr atributigen speicher loops überarbeiten
+
         if(qName == "tileset"){
 
-            tileset t;
 
+            bool ok;
             if(atts.qName(index)=="firstgid"){
-                t.firstgid = atts.value(index).toInt();
-                index++;
+                t.firstgid = atts.value(index).toInt(&ok,10);
+
+                //index++;
+
+
             }
             if(atts.qName(index)=="name"){
                 t.name = atts.value(index);
-                index ++;
+                //index ++;
             }
             if(atts.qName(index)=="tilewidth"){
-                t.tilewidth = atts.value(index).toInt();
-                index++;
+                t.tilewidth = atts.value(index).toInt(&ok,10);
+                //index++;
+
             }
             if(atts.qName(index)=="tileheight"){
-                t.tileheight = atts.value(index).toInt();
-                index++;
+                t.tileheight = atts.value(index).toInt(&ok,10);
+                //index++;
             }
             if(atts.qName(index)=="tilecount"){
-                t.tilecount = atts.value(index).toInt();
-                index++;
+                t.tilecount = atts.value(index).toInt(&ok,10);
+                //index++;
             }
             if(atts.qName(index)=="columns"){
-                t.columns = atts.value(index).toInt();
-                index++;
+                t.columns = atts.value(index).toInt(&ok,10);
+                //index++;
+
             }
 
 
-
+            index++;
         }
-        if(qName == "image"){//!muss noch ein try catch block einbauen fals ein image nicht hinter einem tileset ist
+        if(qName == "image"){//geht
 
             if(atts.qName(index) == "source"){
                 t.source = atts.value(index);
@@ -93,30 +98,40 @@ bool Handler::startElement(const QString &, const QString &,
             }
         }
         if(qName =="layer"){
+
             if(atts.qName(index)=="name"){
-                l.name = atts.qName(index);
-                index++;
+                l.name = atts.value(index);
+
             }
             if(atts.qName(index)=="width"){
-                l.width = atts.qName(index).toInt();
-                index++;
+                l.width = atts.value(index).toInt();
+
             }
             if(atts.qName(index)=="height"){
-                l.height= atts.qName(index).toInt();
-                index++;
-            }
 
+                l.height = atts.value(index).toInt();
+
+            }
+            index++;
         }
-        if(qName == "data"){
-            for(int x = 0; x< l.height*l.width; x++){
-                if(atts.qName(index)=="gid"){
-                    ti.gid = atts.value(index).toInt();
-                    l.tiles.append(ti);
-                    index++;
-                }
 
+
+        if(qName == "tile"){//!funktioniert noch nicht mit tiles mit mehreren attribute(animation usw.)
+
+
+            ti.gid = atts.value(index).toInt();
+            dee++;
+            l.tiles.append(ti);
+            index++;
+
+            if(dee == l.height*l.width){
+               mp.layers.append(l);
+               dee = 0;
             }
-            mp.layers.append(l);
+
+
+
+
         }
 
 

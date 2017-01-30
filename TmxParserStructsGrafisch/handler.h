@@ -34,6 +34,12 @@ private:
     QStringList elementAttributeName;
     QList<int> elementAnzahl;
     QList<int> elementIndentation;
+    tileset t;
+    layer l;
+    tile ti;
+    int dee = 0;
+
+
 };
 
 #endif
