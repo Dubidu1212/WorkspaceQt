@@ -617,6 +617,8 @@ qrc_res.cpp: ../TiledReader/res.qrc \
 		../TiledReader/examplddde.tmx \
 		../TiledReader/example.tmx \
 		../TiledReader/esssaple.tmx \
+		../TiledReader/examplle.tmx \
+		../TiledReader/aa.tmx \
 		../TiledReader/grass-tiles-2-small.png \
 		../TiledReader/qubodup-bush_berries_0.png \
 		../TiledReader/tree2-final.png \
@@ -769,7 +771,9 @@ main.o: ../TiledReader/main.cpp ../TiledReader/handler.h \
 		../../5.7/clang_64/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
 		../TiledReader/tile.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/QPoint \
-		../../5.7/clang_64/lib/QtCore.framework/Headers/qpoint.h
+		../../5.7/clang_64/lib/QtCore.framework/Headers/qpoint.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QBrush \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QColor
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../TiledReader/main.cpp
 
 handler.o: ../TiledReader/handler.cpp ../TiledReader/handler.h \
@@ -807,7 +811,9 @@ tile.o: ../TiledReader/tile.cpp ../TiledReader/tile.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/QPixmap \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/QPoint \
-		../../5.7/clang_64/lib/QtCore.framework/Headers/qpoint.h
+		../../5.7/clang_64/lib/QtCore.framework/Headers/qpoint.h \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsView \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/qgraphicsview.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tile.o ../TiledReader/tile.cpp
 
 qrc_res.o: qrc_res.cpp 

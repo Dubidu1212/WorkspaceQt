@@ -15,7 +15,7 @@ tileset t;
 
 int main(int argc, char **argv)
 {
-
+    std::cout <<"gestartet"<<std::endl;
     //Problem ist beim einlesen
     int höhe = 500; //!blidschirmgrösse
     QApplication app(argc,argv);
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
         QStringList attributeName = handler->attributeName();
         QList<int> indentations = handler->indentations();
         QList<int> anzahl = handler->anzahl();
-        //ddd
+
 
         imageloader il;
         QStringList sources;
@@ -65,27 +65,19 @@ int main(int argc, char **argv)
 
        for(int x = 0; x < mp.tilesets.length(); x++){//jedes tileset durchläuft diesen prozess
            QImage TempImage = images.at(x); //sind source
-
-
-           /*
-           for(int y = 0; y < mp.tilesets.at(x).tilecount; y++){//für jedes tile
-               //tiles auseinanderschneiden und in gid liste eintragen
-
-           }
-*/
-
            int varY = 0;
            int tileheight = mp.tilesets.at(x).tileheight;
 
 
-           int rows = mp.tilesets.at(x).tilecount /  mp.tilesets.at(x).columns;//fehler weil nicht richtig eingelesen
+           int rows = mp.tilesets.at(x).tilecount /  mp.tilesets.at(x).columns;
 
-           for(int z = 0; z< rows; z++){
+           for(int z = 0; z < rows; z++){
 
                int varX = 0;
-               for(int y = 0; y < mp.tilesets.at(x).columns;y++){
+               for(int y = 0; y < mp.tilesets.at(x).columns ;y++){
 
                    gid.append(TempImage.copy(varX,varY,tileheight,tileheight));
+                   std::cout << tileheight << std::endl;
                    varX += tileheight;
                }
                varY += tileheight;
@@ -110,31 +102,44 @@ int main(int argc, char **argv)
        QGraphicsScene * scene = new QGraphicsScene();
        QGraphicsView * view = new QGraphicsView();
        QGraphicsPixmapItem * pixmapItem = new QGraphicsPixmapItem();
-
-        scene->setSceneRect(0,0,1000,1000);
+        view->setScene(scene);
+        scene->setSceneRect(0,0,800,600);
       // pixmapItem->setPixmap(pixmap->fromImage(images.at(0)));
+       QGraphicsPixmapItem * item = new QGraphicsPixmapItem();
 
-       for(int x = 0; x < 10;x++){//nur zum test
+      /* for(int x = 0; x < 10;x++){//nur zum test
+           QPoint point(x*gid.at(0).width(),x*gid.at(0).width());
 
-           QPoint point(x*gid.at(0).height(), x*gid.at(0).height());
+           Dtile * DiTile = new Dtile(QPixmap().fromImage( gid.at(x)),point, item);
 
-           Dtile * dt = new Dtile(gid.at(x),point);
-           scene->addItem(dt);
+           scene->addItem(DiTile);
+
 
        }
+       */
 
+       for(int x = 0; x < mp.layers.length(); x++){//jedes tileset durchläuft diesen prozess
+           int varY = 0;
+           int durchgang = 0;
+           int tileheight = mp.tilesets.at(x).tileheight;
+           for(int z = 0; z < mp.layers.at(x).width; z++){
+               int varX = 0;
+               for(int y = 0; y < mp.layers.at(x).height;y++){
+                   QPoint point(varX,varY);
+                       Dtile * DiTile = new Dtile(QPixmap().fromImage( gid.at(mp.layers.at(0).tiles.at( durchgang ).gid -1)),point, item);
+                       scene->addItem(DiTile);
+                        durchgang++;
+                   //std::cout << durchgang << "   " << mp.layers.at(0).tiles.at( durchgang -1 ).gid << std::endl;
+                   varX += tileheight;
+               }
+               varY += tileheight;
+           }
+       }
 
-
-
-
-       QBrush brush;
-       brush.setColor(QColor(200,10,10,255));
-
-       scene->setBackgroundBrush(brush);
-       view->setScene(scene);
        view->setWindowTitle("Game");//!gamename
-       view->show();
-       //view->showFullScreen();//funktioniert nur wenn kein anderes programm fullscreen ist
+       //view->setFixedSize(800,600);
+       //view->show();
+       view->showFullScreen();//funktioniert nur wenn kein anderes programm fullscreen ist
 
 
     }

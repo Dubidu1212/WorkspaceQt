@@ -3,6 +3,8 @@
         <file>example.tmx</file>
         <file>examplddde.tmx</file>
         <file>esssaple.tmx</file>
+        <file>examplle.tmx</file>
+        <file>aa.tmx</file>
     </qresource>
     <qresource prefix="/tileset">
         <file>grass-tiles-2-small.png</file>
