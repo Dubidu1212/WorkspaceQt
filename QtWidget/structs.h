@@ -2,6 +2,12 @@
 #define STRUCTS_H
 
 #include <QString>
+#include <QFont>
+#include <QPixmap>
+
+
+#include "player.h"
+
 struct frame{
     int tileid;//das selbe wie gid
     int duration;//milisekunden
@@ -76,6 +82,24 @@ struct map{
 };
 extern map mp;
 extern QList <QImage> gid;
+extern QFont dfont;
 
+struct pressed{
+    bool up;
+    bool down;
+    bool left;
+    bool right;
+    bool space;
+
+};
+extern pressed controls;
+
+
+
+struct spritesheet{
+    QPixmap image;
+    int tilecount;
+    QString name;
+};
 
 #endif // STRUCTS_H

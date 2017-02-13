@@ -16,13 +16,23 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     ditile.cpp \
     imageloader.cpp \
-    handler.cpp
+    handler.cpp \
+    player.cpp \
+    viewo.cpp \
+    colisionbox.cpp \
+    updater.cpp
+
 
 HEADERS  += mainwindow.h \
     tile.h \
     structs.h \
     imageloader.h \
-    handler.h
+    handler.h \
+    player.h \
+    viewo.h \
+    colisionbox.h \
+    updater.h
+
 
 FORMS    += mainwindow.ui
 

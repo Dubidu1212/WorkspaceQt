@@ -8,6 +8,16 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsPixmapItem>
+#include <iostream>
+#include "controler.h"
+
+#include <QGraphicsItem>
+
+
+
+
+
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -20,30 +30,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
-
-
-
-
-
     QPixmap * pixmap = new QPixmap();
     QGraphicsScene * scene = new QGraphicsScene();
+
     QGraphicsPixmapItem * pixmapItem = new QGraphicsPixmapItem();
-
-
-   // pixmapItem->setPixmap(pixmap->fromImage(images.at(0)));
     QGraphicsPixmapItem * item = new QGraphicsPixmapItem();
-
-   /* for(int x = 0; x < 10;x++){//nur zum test
-        QPoint point(x*gid.at(0).width(),x*gid.at(0).width());
-
-        Dtile * DiTile = new Dtile(QPixmap().fromImage( gid.at(x)),point, item);
-
-        scene->addItem(DiTile);
-
-
-    }
-    */
-
     for(int x = 0; x < mp.layers.length(); x++){//jedes tileset durchläuft diesen prozess
         int varY = 0;
         int durchgang = 0;
@@ -64,13 +55,45 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
-    QRectF rect;
-    rect.setSize(ui->view->size());
-    scene->setSceneRect(rect);
+
+    scene->addItem(pl);
+    ui->menuGame->setFont(dfont);
     ui->view->setScene(scene);
+
+
+    //this->setFixedSize(this->size());//TODO das nach fullscreen setzen
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+
+
 }
+
+
+
+
+
+void MainWindow::resizeEvent (QResizeEvent *event)
+{
+    QRectF rf;
+    rf.setSize(ui->centralWidget->size());
+    std::cout << "cw" << ui->centralWidget->size().height() << std::endl;
+
+    ui->view->scene()->setSceneRect(rf);
+    std::cout << "s" <<ui->view->scene()->sceneRect().height() << std::endl;
+
+    ui->view->setSceneRect(rf);
+    std::cout << "v" <<ui->view->sceneRect().height() << std::endl;
+
+
+
+}
+void MainWindow::AddItem (QGraphicsItem * item, int scene){
+    //muss für jede scene ein elif einrichten
+    if(scene == 1){
+        ui->view->scene()->addItem(item);
+    }
+}
+
