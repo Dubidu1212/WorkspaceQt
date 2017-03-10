@@ -1,5 +1,6 @@
 #include "level.h"
 
-Level::Level() : QGraphicsScene(){
+Level::Level(QString xml) : QGraphicsScene(){
+
 
 }

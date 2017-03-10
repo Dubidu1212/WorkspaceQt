@@ -22,7 +22,7 @@ QFont dfont;
 pressed controls;
 Player * pl;
 QList  <QGraphicsItem*> colisionList;
-
+QList<Action> TLA;
 //!habe bei .pro controler.h und .cpp entfernt
 void tilecreator(){
     imageloader il;
@@ -71,7 +71,7 @@ int main(int argc, char **argv)
 {
     std::cout <<"gestartet"<<std::endl;
     //Problem ist beim einlesen
-    int höhe = 500; //!blidschirmgrösse
+    int hoehe = 500; //!blidschirmgrösse
     QApplication app(argc,argv);
     QFontDatabase::addApplicationFont(":/fonts/ENDOR___.ttf");
 

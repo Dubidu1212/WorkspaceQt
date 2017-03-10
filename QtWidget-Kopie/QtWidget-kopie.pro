@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     viewo.cpp \
     colisionbox.cpp \
     updater.cpp \
-    level.cpp
+    level.cpp \
+    levelhandler.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -33,7 +34,8 @@ HEADERS  += mainwindow.h \
     viewo.h \
     colisionbox.h \
     updater.h \
-    level.h
+    level.h \
+    levelhandler.h
 
 
 FORMS    += mainwindow.ui

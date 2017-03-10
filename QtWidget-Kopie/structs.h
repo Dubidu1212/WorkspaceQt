@@ -85,19 +85,6 @@ struct pressed{
 };
 extern pressed controls;
 
-
-
-struct Dspritesheet{
-    QImage image;
-    int tilecount;
-    QString name;
-};
-struct Action{
-    QString type;
-    QList<InfoString> Text;
-    QList<InfoInt> ints;
-
-};
 struct InfoString{
     QString type;
     QString text;
@@ -105,6 +92,22 @@ struct InfoString{
 struct InfoInt{
      QString type;
      int number;
+};
+
+
+struct Action{
+    int id;
+    QString type;
+    QList<InfoString> Text;
+    QList<InfoInt> ints;
+
+};
+extern QList<Action> TLA;//templevelaction
+
+struct Dspritesheet{
+    QImage image;
+    int tilecount;
+    QString name;
 };
 
 #endif // STRUCTS_H
