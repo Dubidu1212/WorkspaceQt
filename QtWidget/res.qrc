@@ -6,6 +6,8 @@
         <file>example.tmx</file>
         <file>examplle.tmx</file>
         <file>ddd.tmx</file>
+        <file>qq.tmx</file>
+        <file>ddd_copy.tmx</file>
     </qresource>
     <qresource prefix="/tileset">
         <file>grass-tiles-2-small.png</file>

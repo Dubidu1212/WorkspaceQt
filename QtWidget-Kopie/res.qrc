@@ -1,0 +1,39 @@
+<RCC>
+    <qresource prefix="/xml">
+        <file>aa.tmx</file>
+        <file>esssaple.tmx</file>
+        <file>examplddde.tmx</file>
+        <file>example.tmx</file>
+        <file>examplle.tmx</file>
+        <file>ddd.tmx</file>
+        <file>qq.tmx</file>
+        <file>ddd_copy.tmx</file>
+        <file>silvan.tmx</file>
+        <file>qqdd.tmx</file>
+        <file>qqdd_copy.tmx</file>
+        <file>f.tmx</file>
+        <file>LevelTest.xml</file>
+    </qresource>
+    <qresource prefix="/tileset">
+        <file>grass-tiles-2-small.png</file>
+        <file>GrasZuStein.png</file>
+        <file>littleshrooms_0.png</file>
+        <file>qubodup-bush_0.png</file>
+        <file>qubodup-bush_berries_0.png</file>
+        <file>tree2-final.png</file>
+        <file>tileset_8.png</file>
+    </qresource>
+    <qresource prefix="/fonts">
+        <file>ENDOR___.ttf</file>
+    </qresource>
+    <qresource prefix="/sprites">
+        <file>Arm_back.png</file>
+        <file>Arm_front.png</file>
+        <file>Arm_left.png</file>
+        <file>Arm_right.png</file>
+        <file>Magier_back.png</file>
+        <file>Magier_front.png</file>
+        <file>Magier_left.png</file>
+        <file>Magier_right.png</file>
+    </qresource>
+</RCC>

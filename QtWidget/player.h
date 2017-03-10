@@ -5,7 +5,7 @@
 #include <QObject>
 #include <QGraphicsRectItem>
 #include <QDebug>
-#include "colisionbox.h"
+//#include "colisionbox.h"
 #include <QKeyEvent>
 #include <QGraphicsScene>
 #include <iostream>
@@ -22,12 +22,13 @@ public:
 
 
 private:
+    //colisionbox * box;
     QRect size;
     int up = 0;
     int down = 0;
     int right = 0;
     int left = 0;
-    //QList<spritesheet> sp;//hier ist ein fehler
+    QList<Dspritesheet> sp;//hier ist ein fehler
 };
 extern Player * pl;
 

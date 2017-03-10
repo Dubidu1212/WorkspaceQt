@@ -4,34 +4,34 @@
 Player::Player(QRect Tsize,QGraphicsItem * parent): QGraphicsPixmapItem(parent){
     this->size = Tsize;
 
-    colisionbox * box = new colisionbox(this,this->size);//befindet sich immer beim playeyr
+    //box = new colisionbox(this,this->size);//befindet sich immer beim playeyr
 
-    spritesheet tempsp;
-/*
-    tempsp.image = QPixmap(":/sprites/Magier_front.png");
-    tempsp.tilecount = 4;
-    tempsp.name = "front";
-    sp.append(tempsp);
+    Dspritesheet tempsp;
 
-    tempsp.image = QPixmap(":/sprites/Magier_back.png");
+    tempsp.image = QImage(":/sprites/Magier_back.png");
     tempsp.tilecount = 4;
     tempsp.name = "back";
     sp.append(tempsp);
 
-    tempsp.image = QPixmap(":/sprites/Magier_left.png");
+    tempsp.image = QImage(":/sprites/Magier_front.png");
+    tempsp.tilecount = 4;
+    tempsp.name = "front";
+    sp.append(tempsp);
+
+    tempsp.image = QImage(":/sprites/Magier_left.png");
     tempsp.tilecount = 4;
     tempsp.name = "left";
     sp.append(tempsp);
 
-    tempsp.image = QPixmap(":/sprites/Magier_right.png");
+    tempsp.image = QImage(":/sprites/Magier_right.png");
     tempsp.tilecount = 4;
     tempsp.name = "right";
     sp.append(tempsp);
-*/
+
 }
 
 void Player::move(int distance){
-
+   this->animate();
    if(controls.up ){
        this->moveBy(0,0-distance);
 
@@ -52,42 +52,73 @@ void Player::move(int distance){
 }
 
 void Player::animate(){
-/*
+
     if(controls.up){
+        if(up%10 == 0){
+            if(up == 40){
+                up = 10;
+            }
+            QRect rect = QRect( (up/10-1) * sp.at(0).image.height(),0,sp.at(0).image.height(), sp.at(0).image.height());
+
+            setPixmap(QPixmap().fromImage(QImage(sp.at(0).image.copy(rect))));
+
+        }
         up++;
-        int down = 10;
-        int right = 10;
-        int left = 10;
+         down = 10;
+         right = 10;
+         left = 10;
 
     }
     else if(controls.down){
+
+        if(down%10 == 0){
+            if(down == 40){
+                down = 10;
+            }
+            QRect rect = QRect( (down/10-1) * sp.at(1).image.height(),0,sp.at(1).image.height(), sp.at(1).image.height());
+            setPixmap(QPixmap().fromImage(QImage(sp.at(1).image.copy(rect))));
+
+        }
+
         down++;
-        int up = 10;
-        int left = 10;
-        int right  = 10;
+         up = 10;
+         left = 10;
+         right  = 10;
 
     }
     else if(controls.left){
+        if(left%10 == 0){
+            if(left == 40){
+                left = 10;
+            }
+            QRect rect = QRect( (left/10-1) * sp.at(2).image.height(),0,sp.at(2).image.height(), sp.at(2).image.height());
+            setPixmap(QPixmap().fromImage(QImage(sp.at(2).image.copy(rect))));
+            qDebug() << "l "<< left ;
+        }
         left++;
-        int up = 10;
-        int down = 10;
-        int left = 10;
+         up = 10;
+         down = 10;
+         right = 10;
 
     }
     else if(controls.right){
 
         if(right%10 == 0){
-            QRect rect = QRect(right/10 * sp.at(4).image.height(),0,sp.at(4).image.height(), sp.at(4).image.height());
-            setPixmap(QPixmap().fromImage(QImage(sp.at(4).copy()));
+            if(right == 40){
+                right = 10;
+            }
+            QRect rect = QRect( (right/10-1) * sp.at(3).image.height(),0,sp.at(3).image.height(), sp.at(3).image.height());
+            setPixmap(QPixmap().fromImage(QImage(sp.at(3).image.copy(rect))));
+            qDebug() << "r "<< right ;
 
         }
-        right++;
-        int up = 10;
-        int down = 10;
-        int right = 10;
+         right++;
+         up = 10;
+         down = 10;
+         left = 10;
 
     }
-*/
+
 }
 
 

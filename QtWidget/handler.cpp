@@ -118,10 +118,18 @@ bool Handler::startElement(const QString &, const QString &,
 
         if(qName == "tile"){//!funktioniert noch nicht mit tiles mit mehreren attribute(animation usw.)
 
-            std::cout << dd << std::endl;
-            dd++;
+
             ti.gid = atts.value(index).toInt();
             dee++;
+
+            if(l.name == "colision"){//! collision boxen
+                ti.colision = true;
+            }
+            else{
+                ti.colision = false;
+            }
+
+
             l.tiles.append(ti);
             index++;
 

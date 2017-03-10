@@ -46,7 +46,7 @@ void tilecreator(){
             for(int y = 0; y < mp.tilesets.at(x).columns ;y++){
 
                 gid.append(TempImage.copy(varX,varY,tileheight,tileheight));
-                std::cout << tileheight << std::endl;
+                //std::cout << tileheight << std::endl;
                 varX += tileheight;
             }
             varY += tileheight;
@@ -80,7 +80,7 @@ int main(int argc, char **argv)
 
 
 
-    QFile *file = new QFile(":/xml/aa.tmx");
+    QFile *file = new QFile(":/xml/example.tmx");
 
 
     QXmlSimpleReader xmlReader;
@@ -122,9 +122,9 @@ int main(int argc, char **argv)
 
     pl->setVisible(true);
     updater * updat = new updater(10);
+
+
     MainWindow w;
-
-
     w.show();
 
 

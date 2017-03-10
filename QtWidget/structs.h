@@ -6,7 +6,7 @@
 #include <QPixmap>
 
 
-#include "player.h"
+//#include "player.h"
 
 struct frame{
     int tileid;//das selbe wie gid
@@ -17,18 +17,10 @@ struct animation{
     QList<frame> frames;//bilder
 };
 
-struct terain{//eine art von terain
-    QString name;
-    int tileid;
-};
-
-struct teraintypes{//ansamlung aller terains
-    QList<terain> terains;
-};
 
 struct tile{//eine einzelne kachel auf einer bestimmten ebenen
     int gid;
-    terain tileTerain;
+    bool colision;
 };
 
 
@@ -84,6 +76,7 @@ extern map mp;
 extern QList <QImage> gid;
 extern QFont dfont;
 
+
 struct pressed{
     bool up;
     bool down;
@@ -96,8 +89,8 @@ extern pressed controls;
 
 
 
-struct spritesheet{
-    QPixmap image;
+struct Dspritesheet{
+    QImage image;
     int tilecount;
     QString name;
 };

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <qevent.h>
 #include "structs.h"
+#include "player.h"
 
 void  viewo::wheelEvent ( QWheelEvent * event )
 {
@@ -13,6 +14,7 @@ void  viewo::wheelEvent ( QWheelEvent * event )
 void viewo::keyPressEvent(QKeyEvent *event)//hier zur events liste hinzufügen
 {
 
+    //centerOn(pl);
 
     if((event->key() == Qt::Key_Left)||(event->key() == Qt::Key_A)){//left
         controls.left = true;
@@ -43,6 +45,8 @@ void viewo::keyPressEvent(QKeyEvent *event)//hier zur events liste hinzufügen
 
 void viewo::keyReleaseEvent(QKeyEvent *event)//hier entfernen
 {
+
+
     if((event->key() == Qt::Key_Left)||(event->key() == Qt::Key_A)){//left
         controls.left = false;
 
@@ -65,8 +69,7 @@ void viewo::keyReleaseEvent(QKeyEvent *event)//hier entfernen
     }
 }
 
-viewo::viewo(QWidget *parent):QGraphicsView(parent)
-{
-
+viewo::viewo(QWidget *parent):QGraphicsView(parent){
+    //setRenderHint(QPainter::Antialiasing,true);
 }
 

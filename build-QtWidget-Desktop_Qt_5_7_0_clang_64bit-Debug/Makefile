@@ -652,7 +652,9 @@ qrc_res.cpp: ../QtWidget/res.qrc \
 		../QtWidget/Magier_left.png \
 		../QtWidget/Magier_front.png \
 		../QtWidget/examplddde.tmx \
+		../QtWidget/ddd_copy.tmx \
 		../QtWidget/ddd.tmx \
+		../QtWidget/qq.tmx \
 		../QtWidget/example.tmx \
 		../QtWidget/esssaple.tmx \
 		../QtWidget/examplle.tmx \
@@ -686,6 +688,19 @@ moc_player.cpp: ../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsItem
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qdebug.h \
 		../QtWidget/colisionbox.h \
 		../QtWidget/player.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QKeyEvent \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QPixmap \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QImage \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qimage.h \
+		../QtWidget/structs.h \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/QString \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QFont \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qfont.h \
 		../QtWidget/player.h \
 		../../5.7/clang_64/bin/moc
 	/Users/alexanderzumbrunn/Qt/5.7/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/alexanderzumbrunn/Qt/5.7/clang_64/mkspecs/macx-clang -I/Users/alexanderzumbrunn/Qt/WorkspaceQt/QtWidget -I/Users/alexanderzumbrunn/Qt/5.7/clang_64/lib/QtWidgets.framework/Headers -I/Users/alexanderzumbrunn/Qt/5.7/clang_64/lib/QtGui.framework/Headers -I/Users/alexanderzumbrunn/Qt/5.7/clang_64/lib/QtXml.framework/Headers -I/Users/alexanderzumbrunn/Qt/5.7/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/usr/include -I'/System/Library/Frameworks (framework directory)' -I'/Library/Frameworks (framework directory)' -F/Users/alexanderzumbrunn/Qt/5.7/clang_64/lib ../QtWidget/player.h -o moc_player.cpp
@@ -699,6 +714,19 @@ moc_colisionbox.cpp: ../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphic
 		../../5.7/clang_64/lib/QtCore.framework/Headers/QDebug \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qdebug.h \
 		../QtWidget/colisionbox.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QKeyEvent \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QPixmap \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QImage \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qimage.h \
+		../QtWidget/structs.h \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/QString \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QFont \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qfont.h \
 		../QtWidget/colisionbox.h \
 		../../5.7/clang_64/bin/moc
 	/Users/alexanderzumbrunn/Qt/5.7/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/alexanderzumbrunn/Qt/5.7/clang_64/mkspecs/macx-clang -I/Users/alexanderzumbrunn/Qt/WorkspaceQt/QtWidget -I/Users/alexanderzumbrunn/Qt/5.7/clang_64/lib/QtWidgets.framework/Headers -I/Users/alexanderzumbrunn/Qt/5.7/clang_64/lib/QtGui.framework/Headers -I/Users/alexanderzumbrunn/Qt/5.7/clang_64/lib/QtXml.framework/Headers -I/Users/alexanderzumbrunn/Qt/5.7/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/usr/include -I'/System/Library/Frameworks (framework directory)' -I'/Library/Frameworks (framework directory)' -F/Users/alexanderzumbrunn/Qt/5.7/clang_64/lib ../QtWidget/colisionbox.h -o moc_colisionbox.cpp
@@ -707,6 +735,8 @@ moc_updater.cpp: ../../5.7/clang_64/lib/QtCore.framework/Headers/QObject \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qobject.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/QTimer \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qtimer.h \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/qdebug.h \
 		../QtWidget/updater.h \
 		../../5.7/clang_64/bin/moc
 	/Users/alexanderzumbrunn/Qt/5.7/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/alexanderzumbrunn/Qt/5.7/clang_64/mkspecs/macx-clang -I/Users/alexanderzumbrunn/Qt/WorkspaceQt/QtWidget -I/Users/alexanderzumbrunn/Qt/5.7/clang_64/lib/QtWidgets.framework/Headers -I/Users/alexanderzumbrunn/Qt/5.7/clang_64/lib/QtGui.framework/Headers -I/Users/alexanderzumbrunn/Qt/5.7/clang_64/lib/QtXml.framework/Headers -I/Users/alexanderzumbrunn/Qt/5.7/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/usr/include -I'/System/Library/Frameworks (framework directory)' -I'/Library/Frameworks (framework directory)' -F/Users/alexanderzumbrunn/Qt/5.7/clang_64/lib ../QtWidget/updater.h -o moc_updater.cpp
@@ -744,24 +774,17 @@ main.o: ../QtWidget/main.cpp ../QtWidget/mainwindow.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/QFont \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qfont.h \
-		../QtWidget/player.h \
-		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsItem \
-		../../5.7/clang_64/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
-		../../5.7/clang_64/lib/QtCore.framework/Headers/QObject \
-		../../5.7/clang_64/lib/QtCore.framework/Headers/qobject.h \
-		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsRectItem \
-		../../5.7/clang_64/lib/QtCore.framework/Headers/QDebug \
-		../../5.7/clang_64/lib/QtCore.framework/Headers/qdebug.h \
-		../QtWidget/colisionbox.h \
-		../QtWidget/imageloader.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/QPixmap \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
+		../QtWidget/imageloader.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/QImage \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qimage.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/QFile \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qfile.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/QStringList \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/qdebug.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/QtGui \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qaccessible.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qaccessiblebridge.h \
@@ -866,10 +889,21 @@ main.o: ../QtWidget/main.cpp ../QtWidget/mainwindow.h \
 		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsView \
 		../../5.7/clang_64/lib/QtWidgets.framework/Headers/qgraphicsview.h \
 		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
 		../QtWidget/tile.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/QPoint \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qpoint.h \
-		../../5.7/clang_64/lib/QtGui.framework/Headers/QFontDatabase
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QFontDatabase \
+		../QtWidget/player.h \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsItem \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsRectItem \
+		../QtWidget/colisionbox.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QKeyEvent \
+		../QtWidget/updater.h \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/QTimer \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/qtimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../QtWidget/main.cpp
 
 mainwindow.o: ../QtWidget/mainwindow.cpp ../QtWidget/mainwindow.h \
@@ -903,6 +937,10 @@ mainwindow.o: ../QtWidget/mainwindow.cpp ../QtWidget/mainwindow.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qobject.h \
 		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsRectItem \
 		../QtWidget/colisionbox.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QKeyEvent \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QImage \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qimage.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/QtGui \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qaccessible.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qaccessiblebridge.h \
@@ -912,7 +950,6 @@ mainwindow.o: ../QtWidget/mainwindow.cpp ../QtWidget/mainwindow.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qicon.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qiconengine.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qiconengineplugin.h \
-		../../5.7/clang_64/lib/QtGui.framework/Headers/qimage.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qimageiohandler.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qimagereader.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qimagewriter.h \
@@ -924,7 +961,6 @@ mainwindow.o: ../QtWidget/mainwindow.cpp ../QtWidget/mainwindow.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qclipboard.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qcursor.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qdrag.h \
-		../../5.7/clang_64/lib/QtGui.framework/Headers/qevent.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qgenericplugin.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qguiapplication.h \
@@ -1005,8 +1041,8 @@ mainwindow.o: ../QtWidget/mainwindow.cpp ../QtWidget/mainwindow.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qtguiversion.h \
 		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../5.7/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
-		../QtWidget/controler.h \
-		../../5.7/clang_64/lib/QtGui.framework/Headers/QKeyEvent
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QGradient \
+		../QtWidget/controler.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../QtWidget/mainwindow.cpp
 
 ditile.o: ../QtWidget/ditile.cpp ../QtWidget/tile.h \
@@ -1038,24 +1074,17 @@ handler.o: ../QtWidget/handler.cpp ../QtWidget/handler.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/QFont \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qfont.h \
-		../QtWidget/player.h \
-		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsItem \
-		../../5.7/clang_64/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
-		../../5.7/clang_64/lib/QtCore.framework/Headers/QObject \
-		../../5.7/clang_64/lib/QtCore.framework/Headers/qobject.h \
-		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsRectItem \
-		../../5.7/clang_64/lib/QtCore.framework/Headers/QDebug \
-		../../5.7/clang_64/lib/QtCore.framework/Headers/qdebug.h \
-		../QtWidget/colisionbox.h \
-		../QtWidget/imageloader.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/QPixmap \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
+		../QtWidget/imageloader.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/QImage \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qimage.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/QFile \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qfile.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/QStringList \
-		../../5.7/clang_64/lib/QtCore.framework/Headers/qstringlist.h
+		../../5.7/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o handler.o ../QtWidget/handler.cpp
 
 player.o: ../QtWidget/player.cpp ../QtWidget/player.h \
@@ -1071,6 +1100,10 @@ player.o: ../QtWidget/player.cpp ../QtWidget/player.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qevent.h \
 		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsScene \
 		../../5.7/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QPixmap \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QImage \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qimage.h \
 		../QtWidget/structs.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/QString \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qstring.h \
@@ -1091,13 +1124,20 @@ viewo.o: ../QtWidget/viewo.cpp ../QtWidget/viewo.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/QFont \
 		../../5.7/clang_64/lib/QtGui.framework/Headers/qfont.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QPixmap \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
 		../QtWidget/player.h \
 		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsItem \
 		../../5.7/clang_64/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/QObject \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qobject.h \
 		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsRectItem \
-		../QtWidget/colisionbox.h
+		../QtWidget/colisionbox.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QKeyEvent \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QImage \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qimage.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o viewo.o ../QtWidget/viewo.cpp
 
 colisionbox.o: ../QtWidget/colisionbox.cpp ../QtWidget/colisionbox.h \
@@ -1108,14 +1148,50 @@ colisionbox.o: ../QtWidget/colisionbox.cpp ../QtWidget/colisionbox.h \
 		../QtWidget/player.h \
 		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsRectItem \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/QDebug \
-		../../5.7/clang_64/lib/QtCore.framework/Headers/qdebug.h
+		../../5.7/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QKeyEvent \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QPixmap \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QImage \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qimage.h \
+		../QtWidget/structs.h \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/QString \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QFont \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qfont.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o colisionbox.o ../QtWidget/colisionbox.cpp
 
 updater.o: ../QtWidget/updater.cpp ../QtWidget/updater.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/QObject \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/qobject.h \
 		../../5.7/clang_64/lib/QtCore.framework/Headers/QTimer \
-		../../5.7/clang_64/lib/QtCore.framework/Headers/qtimer.h
+		../../5.7/clang_64/lib/QtCore.framework/Headers/qtimer.h \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../QtWidget/structs.h \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/QString \
+		../../5.7/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QFont \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qfont.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QPixmap \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
+		../QtWidget/player.h \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsItem \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsRectItem \
+		../QtWidget/colisionbox.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QKeyEvent \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/QImage \
+		../../5.7/clang_64/lib/QtGui.framework/Headers/qimage.h \
+		../QtWidget/mainwindow.h \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../5.7/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o updater.o ../QtWidget/updater.cpp
 
 qrc_res.o: qrc_res.cpp 

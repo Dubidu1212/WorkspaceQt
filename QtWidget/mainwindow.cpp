@@ -3,11 +3,13 @@
 
 #include "tile.h"
 #include "structs.h"
+#include "player.h"
 #include <QtGui>
 #include <QApplication>
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsPixmapItem>
+#include <QGradient>
 #include <iostream>
 #include "controler.h"
 
@@ -43,9 +45,11 @@ MainWindow::MainWindow(QWidget *parent) :
             int varX = 0;
             for(int y = 0; y < mp.layers.at(x).height;y++){
                 QPoint point(varX,varY);
-                    Dtile * DiTile = new Dtile(QPixmap().fromImage( gid.at(mp.layers.at(0).tiles.at( durchgang ).gid -1)),point, item);
+
+                    Dtile * DiTile = new Dtile(QPixmap().fromImage( gid.at(mp.layers.at(x).tiles.at( durchgang ).gid -1)), point, item);
                     scene->addItem(DiTile);
                      durchgang++;
+
                 //std::cout << durchgang << "   " << mp.layers.at(0).tiles.at( durchgang -1 ).gid << std::endl;
                 varX += tileheight;
             }
@@ -54,12 +58,17 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
 
-
+    ui->view->scale(1.25,1.25);
 
     scene->addItem(pl);
+
     ui->menuGame->setFont(dfont);
     ui->view->setScene(scene);
+    //ui->view->scene()->setItemIndexMethod(QGraphicsScene::NoIndex);
 
+    //ui->view->centerOn(pl);
+    QBrush * brush = new QBrush(QColor(10,30,0,255),Qt::SolidPattern);
+    ui->view->setBackgroundBrush(*brush);
 
     //this->setFixedSize(this->size());//TODO das nach fullscreen setzen
 }
@@ -90,6 +99,8 @@ void MainWindow::resizeEvent (QResizeEvent *event)
 
 
 }
+
+
 void MainWindow::AddItem (QGraphicsItem * item, int scene){
     //muss für jede scene ein elif einrichten
     if(scene == 1){
