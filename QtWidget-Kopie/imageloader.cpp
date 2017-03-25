@@ -5,7 +5,7 @@ QList<QImage> imageloader::Loadtilesets(int tilesets,QStringList source){
     QList<QImage> imagesl;
     for(int x = 0; x < tilesets; x++){
         QImage image;
-        image.load(QString(":/") + source.at(x));
+        image.load(QString(":/tileset/") + source.at(x));
         imagesl.append(image);
     }
     return imagesl;

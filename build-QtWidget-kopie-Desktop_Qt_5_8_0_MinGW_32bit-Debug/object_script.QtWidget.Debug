@@ -10,9 +10,13 @@ INPUT(
 ./debug\updater.o
 ./debug\level.o
 ./debug\levelhandler.o
+./debug\fireball.o
+./debug\enemy.o
 ./debug\qrc_res.o
 ./debug\moc_mainwindow.o
 ./debug\moc_player.o
 ./debug\moc_colisionbox.o
 ./debug\moc_updater.o
+./debug\moc_fireball.o
+./debug\moc_enemy.o
 );

@@ -15,6 +15,9 @@
 #include <updater.h>
 #include "viewo.h"
 
+
+QList<QGraphicsItem*> firebs;
+QList<QGraphicsItem *> updatelist;
 map mp;
 tileset t;
 QList <QImage> gid;
@@ -81,7 +84,7 @@ int main(int argc, char **argv)
 
 
 
-    QFile *file = new QFile(":/xml/qqdd.tmx");
+    QFile *file = new QFile(":/xml/Real1.tmx");
 
 
     QXmlSimpleReader xmlReader;

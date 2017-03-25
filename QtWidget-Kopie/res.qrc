@@ -13,6 +13,7 @@
         <file>qqdd_copy.tmx</file>
         <file>f.tmx</file>
         <file>LevelTest.xml</file>
+        <file>Real1.tmx</file>
     </qresource>
     <qresource prefix="/tileset">
         <file>grass-tiles-2-small.png</file>
@@ -35,5 +36,18 @@
         <file>Magier_front.png</file>
         <file>Magier_left.png</file>
         <file>Magier_right.png</file>
+        <file>Magier_front_spell.png</file>
+        <file>Magier_back_spell.png</file>
+        <file>Magier_left_spell.png</file>
+        <file>Magier_right_spell.png</file>
+        <file>fireball.png</file>
+        <file>Shield_front.png</file>
+        <file>Shield_back.png</file>
+        <file>Shield_left.png</file>
+        <file>Shield_right.png</file>
+        <file>Enemy_right.png</file>
+        <file>Enemy_left.png</file>
+        <file>Enemy_front.png</file>
+        <file>Enemy_back.png</file>
     </qresource>
 </RCC>

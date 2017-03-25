@@ -5,6 +5,7 @@
 
 
 
+
 updater::updater(int time):QObject(){
     QTimer * timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(update()));
@@ -14,8 +15,12 @@ updater::updater(int time):QObject(){
 void updater::update()
 {
     pl->move(1);
+    pl->mausCool--;
 
     Dvi->centerOn(pl);
+
+
+
 
 }
 

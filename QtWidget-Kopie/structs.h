@@ -6,6 +6,8 @@
 #include <QPixmap>
 #include <QGraphicsItem>
 
+
+
 struct frame{
     int tileid;//das selbe wie gid
     int duration;//milisekunden
@@ -109,5 +111,6 @@ struct Dspritesheet{
     int tilecount;
     QString name;
 };
+
 
 #endif // STRUCTS_H

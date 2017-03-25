@@ -10,9 +10,13 @@ INPUT(
 ./release\updater.o
 ./release\level.o
 ./release\levelhandler.o
+./release\fireball.o
+./release\enemy.o
 ./release\qrc_res.o
 ./release\moc_mainwindow.o
 ./release\moc_player.o
 ./release\moc_colisionbox.o
 ./release\moc_updater.o
+./release\moc_fireball.o
+./release\moc_enemy.o
 );

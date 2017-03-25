@@ -23,7 +23,7 @@ bool LevelHandler::startElement(const QString &, const QString &,
         for(int x = 0;x < atts.length();x++){
 
             if(atts.qName(x) == "id" ){
-                TempAction.id = atts.value(x);
+                TempAction.id = atts.value(x).toInt();
 
             }
             if(atts.qName(x) == "text" ){
@@ -49,20 +49,20 @@ bool LevelHandler::startElement(const QString &, const QString &,
         for(int x = 0; x < atts.count();x++){
 
            if(atts.qName(x) == "id"){
-               TempAction.id = atts.value(x);
+               TempAction.id = atts.value(x).toInt();
            }
            if(atts.qName(x) == "character"){
                InfoString TempInfS;
                TempInfS.text = atts.value(x);
                TempInfS.type = "character";
-               TempAction.Text = TempInfS;
+               TempAction.Text.append(TempInfS);
            }
 
            if(atts.qName(x) == "EventType"){
                InfoString TempInfS;
                TempInfS.text = atts.value(x);
                TempInfS.type = "EventType";
-               TempAction.Text = TempInfS;
+               TempAction.Text.append(TempInfS);
            }
 
         }

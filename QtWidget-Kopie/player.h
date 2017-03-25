@@ -11,6 +11,8 @@
 #include <QPixmap>
 #include <QImage>
 #include "structs.h"
+#include "fireball.h"
+
 
 class Player:public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
@@ -20,15 +22,21 @@ public:
     void animate();
     char collides(const QGraphicsItem * other) const;
 
+    int mausCool = 0;
 private:
-    //colisionbox * box;
+
     QRect size;
     int up = 0;
     int down = 0;
     int right = 0;
     int left = 0;
-    QList<Dspritesheet> sp;//hier ist ein fehler
+    int lookDirection;
+    QList<Dspritesheet> sp;
+public slots:
+    void attack(QPoint p, int button, int count);
 };
 extern Player * pl;
+extern QList<QGraphicsItem*> firebs;
+
 
 #endif // PLAYER_H

@@ -10,10 +10,10 @@
  <image source="tileset/littleshrooms_0.png" width="32" height="40"/>
 </tileset>
 <tileset firstgid="138" name="qubodup-bush_berries_0" tilewidth="32" tileheight="32" tilecount="1" columns="1">
- <image source="tileset/qubodup-bush_berries_0.png" width="32" height="32"/>
+ <image source="qubodup-bush_berries_0.png" width="32" height="32"/>
 </tileset>
 <tileset firstgid="139" name="tree2-final" tilewidth="256" tileheight="256" tilecount="1" columns="1">
- <image source="tileset/tree2-final.png" width="256" height="256"/>
+ <image source="tree2-final.png" width="256" height="256"/>
 </tileset>
  <layer name="Tile Layer 1" width="20" height="20">
   <data>

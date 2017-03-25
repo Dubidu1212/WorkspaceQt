@@ -3,7 +3,7 @@
 
 Player::Player(QRect Tsize,QGraphicsItem * parent): QGraphicsPixmapItem(parent){
     this->size = Tsize;
-
+    setZValue(1);
     //box = new colisionbox(this,this->size);//befindet sich immer beim playeyr
 
     Dspritesheet tempsp;
@@ -28,6 +28,28 @@ Player::Player(QRect Tsize,QGraphicsItem * parent): QGraphicsPixmapItem(parent){
     tempsp.name = "right";
     sp.append(tempsp);
 
+
+
+    tempsp.image = QImage(":/sprites/Magier_back_spell.png");
+    tempsp.tilecount = 6;
+    tempsp.name = "back_spell";
+    sp.append(tempsp);
+
+    tempsp.image = QImage(":/sprites/Magier_front_spell.png");
+    tempsp.tilecount = 6;
+    tempsp.name = "front_spell";
+    sp.append(tempsp);
+
+    tempsp.image = QImage(":/sprites/Magier_left_spell.png");
+    tempsp.tilecount = 6;
+    tempsp.name = "left_spell";
+    sp.append(tempsp);
+
+    tempsp.image = QImage(":/sprites/Magier_right_spell.png");
+    tempsp.tilecount = 6;
+    tempsp.name = "right_spell";
+    sp.append(tempsp);
+
 }
 
 void Player::move(int distance){
@@ -39,7 +61,7 @@ void Player::move(int distance){
 
 
     for(int x = 0; x<colisionList.length();x++){
-        qDebug() <<"  dd  "<< this->collides(colisionList.at(x)) ;
+
 
         if(this->collides(colisionList.at(x) ) == 'u'){
             u = false;
@@ -75,12 +97,14 @@ void Player::move(int distance){
        this->moveBy(distance,0);
 
    }
+ //  else if()
 
 }
 
 void Player::animate(){
 
     if(controls.up){
+        lookDirection = 1;
         if(up%10 == 0){
             if(up == 40){
                 up = 10;
@@ -97,7 +121,7 @@ void Player::animate(){
 
     }
     else if(controls.down){
-
+        lookDirection =3;
         if(down%10 == 0){
             if(down == 40){
                 down = 10;
@@ -114,6 +138,7 @@ void Player::animate(){
 
     }
     else if(controls.left){
+        lookDirection = 0;
         if(left%10 == 0){
             if(left == 40){
                 left = 10;
@@ -128,6 +153,7 @@ void Player::animate(){
 
     }
     else if(controls.right){
+        lookDirection = 2;
 
         if(right%10 == 0){
             if(right == 40){
@@ -149,218 +175,80 @@ void Player::animate(){
 
 }
 
+void Player::attack(QPoint p, int button,  int count){
+    int temp;
+    if(lookDirection == 1){
+        temp = 4;
+    }
+    else if(lookDirection == 3){
+        temp = 5;
+    }
+    else if(lookDirection == 2){
+        temp = 7;
+    }
+    else{
+        temp = 6;
+    }
+
+    QRect rect = QRect( count * sp.at(temp).image.height(),0,sp.at(temp).image.height(), sp.at(temp).image.height());
+    setPixmap(QPixmap().fromImage(QImage(sp.at(temp).image.copy(rect))));
+    if(count > 4){
+        fireball * fb = new fireball(lookDirection);
+        this->scene()->addItem(fb);
+    }
+
+}
+
 char Player::collides(const QGraphicsItem *other) const
 {
-    /*
-    if(this->pos().x()+ this->boundingRect().width() > other->pos().x() && this->pos().x() < other->pos().x()+ other->boundingRect().width()){//von seite
-
-        if(this->pos().y() + this->boundingRect().height() > other->pos().y() && this->pos().y() < other->pos().y() + other->boundingRect().height()){
-
-
-
-
-            if(this->pos().x()+ this->boundingRect().width() > other->pos().x()){//rechts
-                return 'r';
-            }
-            else if(this->pos().x() < other->pos().x()+ other->boundingRect().width()){//links
-                return 'l';
-            }
-            else if(this->pos().y() < other->pos().y() + other->boundingRect().height()){//oben
-                return 'u';
-            }
-            else if(this->pos().y() + this->boundingRect().height() > other->pos().y()){//unten
-                return 'd';
-            }
-
-
-        }
-
-    }
-    /**/
-
-/*
-
-    if(this->boundingRect().intersects(other->boundingRect())){
-
-
-        //hiermit kann ich 2 seiten auschliessen
-        if(this->boundingRect().center().x() > other->boundingRect().center().x()){// other befindet sich links
-
-            if(this->boundingRect().center().y() > other->boundingRect().center().y()){//other ist über
-                //!hier geht es darum zu bestimmen welches kleiner ist diesen wert dann returnen
-               int dy = this->boundingRect().center().y() - other->boundingRect().center().y();
-
-               int dx = this->boundingRect().center().x() - other->boundingRect().center().x();
-
-               if(dx > dy){//dy
-
-                   return 'u';
-
-               }
-               else{//dx
-
-                   return 'l';
-
-               }
-
-            }
-            else{// other ist unter
-
-                //!hier geht es darum zu bestimmen welches kleiner ist diesen wert dann returnen
-                int dy = other->boundingRect().center().y() - this->boundingRect().center().y();
-
-                int dx = this->boundingRect().center().x() - other->boundingRect().center().x();
-
-                if(dx > dy){//dy
-
-                    return 'd';
-                }
-                else{//dx
-
-                    return 'l';
-
-                }
-            }
-        }
-        else{// other befindet sich rechts
-
-            if(this->boundingRect().center().y() > other->boundingRect().center().y()){// other ist über
-                //!hier geht es darum zu bestimmen welches kleiner ist diesen wert dann returnen
-                int dy = this->boundingRect().center().y() - other->boundingRect().center().y();
-
-                int dx = other->boundingRect().center().x() - this->boundingRect().center().x();
-
-                if(dx > dy){//dy
-
-                    return 'u';
-                }
-                else{//dx
-
-                    return 'r';
-
-                }
-
-            }
-            else{// other ist unter
-
-                //!hier geht es darum zu bestimmen welches kleiner ist diesen wert dann returnen
-
-                int dy = other->boundingRect().center().y() - this->boundingRect().center().y();
-
-                int dx = other->boundingRect().center().x() - this->boundingRect().center().x();
-
-
-                if(dx > dy){//dy
-
-                    return 'd';
-
-                }
-                else{//dx
-
-                    return 'r';
-
-                }
-
-
-            }
-        }
-
-    }
-    return 'n';
-    */
-
     if(this->collidesWithItem(other,Qt::IntersectsItemBoundingRect)){
-        //hiermit kann ich 2 seiten auschliessen
-
-
         if(this->boundingRect().center().x() + this->pos().x() > other->pos().x() + other->boundingRect().center().x()){// other befindet sich links
-
             if(this->boundingRect().center().y() + this->pos().y() > other->pos().y() + other->boundingRect().center().y()){//other ist über
                 //!hier geht es darum zu bestimmen welches kleiner ist diesen wert dann returnen
                int dy = (this->boundingRect().center().y() + this->pos().y()) - (other->pos().y() + other->boundingRect().center().y());//!center ist der punkt relativ zu seiner echten position
-
                int dx = (this->boundingRect().center().x() + this->pos().x())  - (other->pos().x() + other->boundingRect().center().x());
-
                if(dx > dy ){//dy
-
-
                    return 'l';
-
                }
                else{//dx
-
-
-                   qDebug() << dx <<"jd"<< dy;
                    return 'u';
-
                }
-
             }
             else{// other ist unter
-
-                //!hier geht es darum zu bestimmen welches kleiner ist diesen wert dann returnen
                 int dy = (other->boundingRect().center().y() + other->pos().y() ) - (this->pos().y() +this->boundingRect().center().y());
-
                 int dx = (this->pos().x() + this->boundingRect().center().x() ) -  (other->pos().x() + other->boundingRect().center().x());
-
                 if(dx > dy){//dy
-
                     return 'l';
                 }
                 else{//dx
-
                     return 'd';
-
                 }
             }
         }
         else{// other befindet sich rechts
-
             if(this->boundingRect().center().y() + this->pos().y() > other->pos().y() + other->boundingRect().center().y()){// other ist über
-                //!hier geht es darum zu bestimmen welches kleiner ist diesen wert dann returnen
-                //!
                 int dy = (this->boundingRect().center().y() + this->pos().y()) - (other->pos().y() + other->boundingRect().center().y());//!center ist der punkt relativ zu seiner echten position
-
                 int dx = (other->boundingRect().center().x() + other->pos().x()) - (this->pos().x() + this->boundingRect().center().x());
-
                 if(dx > dy){//dy
-
                     return 'r';
                 }
                 else{//dx
-
                     return 'u';
-
                 }
-
             }
             else{// other ist unter
-
-                //!hier geht es darum zu bestimmen welches kleiner ist diesen wert dann returnen
-
                 int dy = (other->boundingRect().center().y() + other->pos().y() ) - (this->pos().y() +this->boundingRect().center().y());
-
                 int dx = (other->boundingRect().center().x() + other->pos().x()) - (this->pos().x() + this->boundingRect().center().x());
-
-
                 if(dx > dy){//dy
-
                     return 'r';
-
                 }
                 else{//dx
-
                     return 'd';
-
                 }
-
-
             }
         }
-
     }
     return 'n';
-
 }
 
 

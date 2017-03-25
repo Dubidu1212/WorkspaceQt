@@ -22,7 +22,10 @@ SOURCES += main.cpp\
     colisionbox.cpp \
     updater.cpp \
     level.cpp \
-    levelhandler.cpp
+    levelhandler.cpp \
+    fireball.cpp \
+    enemy.cpp \
+    gamemaster.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -35,7 +38,10 @@ HEADERS  += mainwindow.h \
     colisionbox.h \
     updater.h \
     level.h \
-    levelhandler.h
+    levelhandler.h \
+    fireball.h \
+    enemy.h \
+    gamemaster.h
 
 
 FORMS    += mainwindow.ui
