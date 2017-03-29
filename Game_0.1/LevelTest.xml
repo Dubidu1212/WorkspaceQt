@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<LevelAction>
+    <ActionList>
+        <Text id = "0" character = "Dengel" text = "Hi" />
+        <Eaction id = "1" character = "Dengel" EventType = "attack">
+            <information type = "damage" info = "10"/>
+            <information type = "OpferCharacter" info = "Dengel"/>
+        </Eaction>
+        <chose id = "1" character = "Mentor" text = "Willst du spielen?">
+            <choice id = "0" >
+                <Text id = "1" character = "null" text = "Ja"/>
+            </choice>
+            <choice id = "1" >
+                <Text id = "2" character = "null" text = "Nein"/>
+            </choice>
+        </chose>
+        <Trigger id = "0" type = "position" >
+            <informaton type = "xpos" info = "20"/>
+        </Trigger>
+    </ActionList>
+</LevelAction>

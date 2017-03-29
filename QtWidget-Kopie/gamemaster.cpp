@@ -1,6 +1,6 @@
 #include "gamemaster.h"
 
-GameMaster::GameMaster()
-{
+GameMaster::GameMaster(){
+
 
 }
